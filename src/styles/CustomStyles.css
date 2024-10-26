@@ -1,0 +1,60 @@
+:root {
+  /* --primary: #003D5B ;
+  --secondary: #00A676 ;
+  --accent: #FFD700 ;
+  --background: #F0F4F8 ;
+  --text: #00171F ;
+
+  --primary: #1D4E89  ;
+  --secondary: #20BF55  ;
+  --accent: #FFC857  ;
+  --background: #EAEAEA  ;
+  --text: #0D1B2A  ; */
+
+  --primary: #94d2bd;
+  --secondary: #0a9396;
+  --accent: #005f73;
+  --background: #f5f5f5;
+  --text: #001219;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.bg-background {
+  background-color: var(--background);
+}
+.bg-text {
+  background-color: var(--text);
+}
+
+
+
+
+.hero img {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+.hero img:hover {
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: var(--background);
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-primary:hover {
+  background-color: var(--accent);
+}

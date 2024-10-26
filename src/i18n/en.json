@@ -1,0 +1,28 @@
+{
+  "navbar": {
+    "searchPlaceholder": "Search...",
+    "login": "Login"
+  },
+
+  "sidebar": {
+    "favourites": "Favourites",
+    "sales": "Sales",
+    "popular": "Popular",
+    "accessories": "Accessories",
+    "wheels": "Wheels",
+    "suspensions": "Suspensions",
+    "brakes": "Brakes",
+    "tires": "Tires",
+    "front": "Front",
+    "rear": "Rear",
+    "rim": "Rim",
+    "rimBrakes": "Rim Brakes"
+  },
+
+  "home": {
+    "hero": {
+      "title": "Revamp Your Ride",
+      "subtitle": "From engines to essentials—find everything to keep you moving forward."
+    }
+  }
+}

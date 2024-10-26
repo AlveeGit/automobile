@@ -1,0 +1,52 @@
+[
+  {
+    "label": "favourites",
+    "icon": "FaHeart",
+    "route": "/favourites"
+  },
+  {
+    "label": "sales",
+    "icon": "FaGripfire",
+    "route": "/sales"
+  },
+  {
+    "label": "popular",
+    "icon": "FaThumbsUp",
+    "route": "/popular"
+  },
+  {
+    "label": "accessories",
+    "icon": "FaHeart",
+    "children": [
+      {
+        "label": "wheels",
+        "route": "/accessories/wheels"
+      },
+      {
+        "label": "suspensions",
+        "route": "/accessories/suspensions"
+      },
+      {
+        "label": "brakes",
+        "route": "/accessories/brakes"
+      }
+    ]
+  },
+  {
+    "label": "tires",
+    "icon": "FaGripfire",
+    "children": [
+      {
+        "label": "front",
+        "route": "/tires/front"
+      },
+      {
+        "label": "rear",
+        "children": [
+          { "label": "rim", "route": "/tires/rear/rim" },
+          { "label": "rimBrakes", "route": "/tires/rear/rimBrakes" }
+        ]
+      }
+    ]
+  }
+]
