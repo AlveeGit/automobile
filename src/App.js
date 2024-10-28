@@ -10,14 +10,12 @@ import AdminDashboard from "./features/admin/Dashboard";
 import Profile from "./pages/profile/Profile";
 import CourseList from "./pages/courses/CourseList";
 import VendorDashboard from "./features/vendor/VendorDashboard";
-import "./App.css";
 import "./styles/CustomStyles.css";
 import "./i18n";
 import { useSelector } from "react-redux";
 
 function App() {
   const isSidebarOpen = useSelector((state) => state.ui.isSidebarOpen);
-  // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <Router>
@@ -27,12 +25,12 @@ function App() {
         <div
           className={`${
             isSidebarOpen ? "w-64" : "w-0"
-          } transition-all duration-300 ease-in-out overflow-hidden`}
+          } transition-all duration-300 ease-in-out `}
         >
           <Sidebar />
         </div>
         {/* Main content with smooth transition */}
-        <main className="w-full ">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto h-[calc(100vh-74px)] bg-background">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />

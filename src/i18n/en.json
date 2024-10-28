@@ -3,7 +3,6 @@
     "searchPlaceholder": "Search...",
     "login": "Login"
   },
-
   "sidebar": {
     "favourites": "Favourites",
     "sales": "Sales",
@@ -18,11 +17,14 @@
     "rim": "Rim",
     "rimBrakes": "Rim Brakes"
   },
-
   "home": {
     "hero": {
       "title": "Revamp Your Ride",
       "subtitle": "From engines to essentials—find everything to keep you moving forward."
-    }
+    },
+    "popular": "Popular Products",
+    "accessories": "Accessories",
+    "sales": "Sales",
+    "recommended": "Recommended for You"
   }
 }

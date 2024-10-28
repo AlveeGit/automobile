@@ -24,12 +24,12 @@ function Sidebar() {
       const hasChildren = item.children && item.children.length > 0;
 
       return (
-        <div key={item.label} className={`ml-${depth + 1}`}>
+        <div key={item.label} className={`px-4 py-2 ml-${depth + 1}`}>
           <button
             onClick={() =>
               hasChildren ? toggleMenu(item.label) : navigate(item.route)
             }
-            className="flex items-center justify-between w-full font-semibold mb-2"
+            className="flex items-center justify-between w-full "
           >
             <span className="flex items-center gap-2">
               {Icon && <Icon color="var(--secondary)" />}
@@ -51,7 +51,7 @@ function Sidebar() {
     });
 
   return (
-    <aside className="h-screen bg-background p-4">
+    <aside className="h-[calc(100vh-74px)] bg-background border-r border-gray-300  ">
       {renderMenuItems(sidebarItems)}
     </aside>
   );

@@ -5,7 +5,7 @@ const uiSlice = createSlice({
   name: "ui",
   initialState: {
     isSidebarOpen: false,
-    language: "EN", // Default language
+    language: "en", // Default language
   },
   reducers: {
     toggleSidebar: (state) => {

@@ -1,26 +1,26 @@
 // Navbar.js
-import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
+import { FaBars, FaSearch } from "react-icons/fa";
 import { logo } from "../../assets/images";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleSidebar } from "../../store/slices/uiSlice";
+import { useDispatch } from "react-redux";
+import { toggleSidebar, setLanguage } from "../../store/slices/uiSlice";
 import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isSidebarOpen = useSelector((state) => state.ui.isSidebarOpen);
 
   const { t, i18n } = useTranslation();
 
   // State for language selection
-  const [language, setLanguage] = useState("EN");
+  const [lang, setLang] = useState("EN");
 
   // Language selection handler
-  const handleLanguageChange = (lang) => {
-    setLanguage(lang);
-    i18n.changeLanguage(lang.toLowerCase());
+  const handleLanguageChange = (langu) => {
+    setLang(langu);
+    i18n.changeLanguage(langu.toLowerCase());
+    dispatch(setLanguage(langu.toLowerCase()));
   };
 
   return (
@@ -31,7 +31,7 @@ function Navbar() {
           className="text-gray-800 text-xl mr-4"
           onClick={() => dispatch(toggleSidebar())}
         >
-          {isSidebarOpen ? <FaTimes /> : <FaBars />}
+          <FaBars />
         </button>
 
         <div className="w-40" onClick={() => navigate("/")}>
@@ -52,7 +52,7 @@ function Navbar() {
             <button
               onClick={() => handleLanguageChange("EN")}
               className={`px-4 py-1 rounded-s-xl  ${
-                language === "EN"
+                lang === "EN"
                   ? "bg-secondary  text-white"
                   : "bg-white text-gray-700"
               } `}
@@ -62,7 +62,7 @@ function Navbar() {
             <button
               onClick={() => handleLanguageChange("BN")}
               className={`px-4 py-1 rounded-e-xl  ${
-                language === "BN"
+                lang === "BN"
                   ? "bg-secondary  text-white"
                   : "bg-white text-gray-700"
               } `}
