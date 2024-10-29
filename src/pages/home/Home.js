@@ -23,18 +23,22 @@ const Home = () => {
         <ProductSlider
           title={t("home.popular")}
           products={getProductData(language, "popular")}
+          viewAllLink="/popular"
         />
         <ProductSlider
           title={t("home.accessories")}
           products={getProductData(language, "accessories")}
+          viewAllLink="/accessories"
         />
         <ProductSlider
           title={t("home.sales")}
           products={getProductData(language, "sales")}
+          viewAllLink="/sales"
         />
         <ProductSlider
           title={t("home.recommended")}
           products={getProductData(language, "recommended")}
+          viewAllLink="/recommended"
         />
       </div>
     </div>
