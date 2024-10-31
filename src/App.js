@@ -13,9 +13,16 @@ import VendorDashboard from "./features/vendor/VendorDashboard";
 import "./styles/CustomStyles.css";
 import "./i18n";
 import { useSelector } from "react-redux";
+import Footer from "./components/footer/Footer";
+import { WebContent } from "./cms/WebContent";
 
 function App() {
   const isSidebarOpen = useSelector((state) => state.ui.isSidebarOpen);
+
+  const onSendLink = (phoneNumber) => {
+    console.log(`Sending app link to ${phoneNumber}`);
+    // Integrate with your backend for SMS link sending
+  };
 
   return (
     <Router>
@@ -42,6 +49,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/courses" element={<CourseList />} />
           </Routes>
+          <Footer columns={WebContent.footer.columns} onSendLink={onSendLink} />
         </main>
       </div>
     </Router>

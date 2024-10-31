@@ -11,8 +11,18 @@ import parts9 from "./parts9.webp";
 import parts10 from "./parts10.webp";
 import parts11 from "./parts11.webp";
 import parts12 from "./parts12.webp";
+import bkash from "./bkash.webp";
+import americanexpress from "./americanexpress.webp";
+import mastercard from "./mastercard.webp";
+import visa from "./visa.webp";
+import app from "./app.webp";
 
 export {
+  app,
+  bkash,
+  americanexpress,
+  mastercard,
+  visa,
   logo,
   parts1,
   parts2,

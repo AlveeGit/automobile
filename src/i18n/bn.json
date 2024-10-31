@@ -18,15 +18,28 @@
     "rim": "রিম",
     "rimBrakes": "রিম ব্রেক"
   },
+  "common": {
+    "viewAll": "সব দেখুন"
+  },
 
   "home": {
     "hero": {
       "title": "আপনার গাড়িকে নতুনভাবে সাজান",
       "subtitle": "ইঞ্জিন থেকে প্রয়োজনীয় সব কিছু, চলতে থাকুন নিশ্চিন্তে"
     },
-    "popular": "জনপ্রিয় পণ্যসমূহ",
+    "popularCategories": "জনপ্রিয় পণ্যসমূহ",
     "accessories": "অ্যাক্সেসরিজ",
     "sales": "বিক্রয়",
     "recommended": "আপনার জন্য সুপারিশ"
+  },
+  "footer": {
+    "payment": "পেমেন্ট পদ্ধতি",
+    "phone": "+৮৮ ০১২৩৪ ৫৬৭ ৮৯০",
+    "email": "octopus@epl.com",
+    "numberPlaceholder": "আপনার নম্বর লিখুন",
+    "getButton": "অ্যাপ পান",
+    "appStore": "অ্যাপ স্টোর",
+    "playStore": "গুগল প্লে",
+    "copyright": "© ২০২৪ অক্টোপাস-ইপিএল। সর্বস্বত্ব সংরক্ষিত।"
   }
 }

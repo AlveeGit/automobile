@@ -12,6 +12,7 @@ import {
   parts10,
   parts11,
   parts12,
+  app,
 } from "../assets/images";
 
 export const WebContent = {
@@ -26,19 +27,86 @@ export const WebContent = {
         { src: parts6, alt: "Tire" },
       ],
     },
-    popularProducts: [
-      { image: parts1, name: "Engine Part", price: "$250" },
-      { image: parts2, name: "Suspension Kit", price: "$400" },
-      { image: parts3, name: "Brake Discs", price: "$100" },
+    shopAndGetMore: [
+      {
+        title: " Shop & Earn Points",
+        description:
+          "The more you shop the more you earn - cash back, free shipping, exclusive offers and more. Discover the perks of Egg Club membership.",
+        image: parts1,
+      },
+
+      {
+        title: "Get Free Shipping",
+        description: "Free shipping on all orders over $100.",
+        image: parts2,
+      },
+
+      {
+        title: "Exclusive Offers",
+        description:
+          "Get exclusive offers and discounts on your next purchase.",
+        image: parts3,
+      },
+
+      {
+        title: "Earn Points",
+        description: "Shop with us and earn points for your next purchase.",
+        image: parts4,
+      },
+
+      {
+        title: "Get Free Shipping",
+        description: "Free shipping on all orders over $100.",
+        image: parts5,
+      },
     ],
-    accessories: [
-      { image: parts4, name: "Alloy Wheels", price: "$399" },
-      { image: parts5, name: "Oil Filter", price: "$15" },
-    ],
-    sales: [{ image: parts6, name: "Tire", price: "$120" }],
-    recommended: [
-      { image: parts1, name: "Engine Oil", price: "$30" },
-      { image: parts2, name: "Spark Plug", price: "$10" },
+    appDownloadSection: {
+      title: "Download The Octopus-EPL App Now!",
+      bnTitle: "অক্টোপাস এপ্ল এপ্লিকেশন ডাউনলোড করুন",
+      subtitle:
+        "Get 5% off on your first order through the Octopus-EPL app and make your shopping experience even smoother!",
+      bnSubtitle:
+        "Octopus-EPL অ্যাপের মাধ্যমে আপনার প্রথম অর্ডারে 5% ছাড় পান এবং আপনার কেনাকাটার অভিজ্ঞতাকে আরও মসৃণ করে তুলুন!  ",
+      image: app,
+    },
+  },
+  footer: {
+    columns: [
+      {
+        title: "Company",
+        bnTitle: "কোম্পানি",
+        links: [
+          { href: "/about", label: "About Us", bnLabel: "আমাদের সম্পর্কে" },
+          { href: "/careers", label: "Careers", bnLabel: "ক্যারিয়ারস" },
+          { href: "/blog", label: "Blog", bnLabel: "ব্লগ" },
+        ],
+      },
+      {
+        title: "Support",
+        bnTitle: "সহায়তা",
+        links: [
+          { href: "/help", label: "Help Center", bnLabel: "সহায়তা কেন্দ্র" },
+          { href: "/contact", label: "Contact Us", bnLabel: "যোগাযোগ করুন" },
+          { href: "/faq", label: "FAQs", bnLabel: "প্রশ্ন ও উত্তর" },
+        ],
+      },
+      {
+        title: "Legal",
+        bnTitle: "আইনি",
+        links: [
+          {
+            href: "/privacy",
+            label: "Privacy Policy",
+            bnLabel: "গোপনীয়তা নীতি",
+          },
+          {
+            href: "/terms",
+            label: "Terms of use",
+            bnLabel: "ব্যবহারের নিয়মাবলি",
+          },
+          { href: "/cookies", label: "Cookie Policy", bnLabel: "কুকি নীতি" },
+        ],
+      },
     ],
   },
 };

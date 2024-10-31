@@ -60,6 +60,20 @@
   color: var(--secondary);
 }
 
+/* flex items-center bg-gray-800 p-2 rounded-md hover:bg-gray-700 */
+.download-btn {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.download-btn:hover {
+  background-color: var(--accent);
+}
+
 /* className={`p-2 bg-gray-200 rounded-full mr-2 ${
             isPrevDisabled ? "opacity-50 cursor-not-allowed" : ""
           }`} */

@@ -17,14 +17,26 @@
     "rim": "Rim",
     "rimBrakes": "Rim Brakes"
   },
+  "common": {
+    "viewAll": "View All"
+  },
   "home": {
     "hero": {
       "title": "Revamp Your Ride",
       "subtitle": "From engines to essentials—find everything to keep you moving forward."
     },
-    "popular": "Popular Products",
-    "accessories": "Accessories",
-    "sales": "Sales",
+    "popularCategories": "Popular Categories",
+    "popularOnOctopus": "Popular on Octopus-EPL",
     "recommended": "Recommended for You"
+  },
+  "footer": {
+    "payment": "Payment Methods",
+    "phone": "+88 01234 567 890",
+    "email": "octopus@epl.com",
+    "numberPlaceholder": "Enter your number",
+    "getButton": "Get App",
+    "appStore": "App Store",
+    "playStore": "Google Play",
+    "copyright": "© 2024 Octopus-EPL. All rights reserved."
   }
 }

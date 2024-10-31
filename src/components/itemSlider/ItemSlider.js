@@ -1,10 +1,11 @@
-// ProductSlider.js
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-const ProductSlider = ({ title, products, viewAllLink }) => {
+const ItemSlider = ({ title, items, viewAllLink, shade }) => {
+  const { t } = useTranslation();
   const sliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(8);
@@ -13,9 +14,9 @@ const ProductSlider = ({ title, products, viewAllLink }) => {
     dots: true,
     infinite: false,
     speed: 500,
-    slidesToShow: slidesToShow, // Dynamically adjust slidesToShow based on screen size
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
-    afterChange: (index) => setCurrentSlide(index), // Track current slide index
+    afterChange: (index) => setCurrentSlide(index),
     responsive: [
       { breakpoint: 1920, settings: { slidesToShow: 7 } },
       { breakpoint: 1600, settings: { slidesToShow: 6 } },
@@ -30,8 +31,6 @@ const ProductSlider = ({ title, products, viewAllLink }) => {
   useEffect(() => {
     const updateSlidesToShow = () => {
       const width = window.innerWidth;
-
-      // Set slidesToShow based on the current screen width
       if (width >= 1920) setSlidesToShow(8);
       else if (width >= 1600) setSlidesToShow(7);
       else if (width >= 1280) setSlidesToShow(6);
@@ -42,34 +41,26 @@ const ProductSlider = ({ title, products, viewAllLink }) => {
       else setSlidesToShow(1);
     };
 
-    updateSlidesToShow(); // Run on initial render
-    window.addEventListener("resize", updateSlidesToShow); // Update on resize
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
     return () => window.removeEventListener("resize", updateSlidesToShow);
   }, []);
 
   const handlePrev = () => sliderRef.current.slickPrev();
   const handleNext = () => sliderRef.current.slickNext();
-
-  // Calculate when to disable buttons
   const isPrevDisabled = currentSlide === 0;
-  const isNextDisabled = currentSlide >= products.length - slidesToShow;
+  const isNextDisabled = currentSlide >= items.length - slidesToShow;
 
   return (
     <section className="mb-8 px-8 py-4">
-      {/* Title and Navigation Buttons */}
-      <div className="flex items-center justify-center mb-4 relative">
-        <div className="flex-grow text-center text-xl ">
-          {title}
-        </div>
-
-        <div className="absolute right-10">
+      <div className="flex items-center justify-center mb-6 relative">
+        <div className="flex-grow text-center text-xl">{title}</div>
+        <div className="absolute right-10 flex items-center space-x-4">
           {viewAllLink && (
             <Link to={viewAllLink} className="link">
-              View All
+              {t("common.viewAll")}
             </Link>
           )}
-
-          {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
             disabled={isPrevDisabled}
@@ -91,18 +82,20 @@ const ProductSlider = ({ title, products, viewAllLink }) => {
         </div>
       </div>
 
-      {/* Product Slider */}
       <Slider ref={sliderRef} {...settings}>
-        {products.map((product, index) => (
+        {items.map((item, index) => (
           <div key={index} className="px-2">
-            <div className="border rounded-lg p-4">
+            <div
+              className={`min-h-[230px] flex flex-col justify-between items-center rounded-2xl p-4 mb-4 text-center ${
+                shade ? "border border-gray-300 shadow-lg" : ""
+              }`}
+            >
               <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-32 object-cover"
+                src={item.image}
+                alt={item.name}
+                className="w-full h-32 object-cover mb-0 rounded-xl"
               />
-              <h3 className="text-lg font-medium mt-2">{product.name}</h3>
-              <p className="text-gray-700">{product.price}</p>
+              <h3 className="text-lg mt-2">{item.name}</h3>
             </div>
           </div>
         ))}
@@ -111,4 +104,4 @@ const ProductSlider = ({ title, products, viewAllLink }) => {
   );
 };
 
-export default ProductSlider;
+export default ItemSlider;

@@ -1,15 +1,15 @@
 // Home.js
 
 import Hero from "../../components/hero/Hero";
-import ProductSlider from "../../components/productSlider/ProductSlider";
-import { WebContent, productData, getProductData } from "../../cms/WebContent";
+import { WebContent, getProductData } from "../../cms/WebContent";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import ItemSlider from "../../components/itemSlider/ItemSlider";
+import AppDownloadSection from "../../components/appDownloadSection/AppDownloadSection";
 
 const Home = () => {
   const { t } = useTranslation();
   const language = useSelector((state) => state.ui.language);
-  console.log(language);
 
   return (
     <div>
@@ -20,27 +20,34 @@ const Home = () => {
       />
       {/* Dynamic Sections */}
       <div className="pt-8">
-        <ProductSlider
-          title={t("home.popular")}
-          products={getProductData(language, "popular")}
-          viewAllLink="/popular"
-        />
-        <ProductSlider
-          title={t("home.accessories")}
-          products={getProductData(language, "accessories")}
-          viewAllLink="/accessories"
-        />
-        <ProductSlider
-          title={t("home.sales")}
-          products={getProductData(language, "sales")}
-          viewAllLink="/sales"
-        />
-        <ProductSlider
+        <ItemSlider
           title={t("home.recommended")}
-          products={getProductData(language, "recommended")}
+          items={getProductData(language, "recommended")}
           viewAllLink="/recommended"
+          shade
+        />
+        <ItemSlider
+          title={t("home.popularCategories")}
+          items={getProductData(language, "popular")}
+          viewAllLink="/popular"
+          shade
         />
       </div>
+      {/* Dynamic Sections : aplication */}
+      <AppDownloadSection
+        title={
+          language === "bn"
+            ? WebContent.home.appDownloadSection.bnTitle
+            : WebContent.home.appDownloadSection.title
+        }
+        subtitle={
+          language === "bn"
+            ? WebContent.home.appDownloadSection.bnSubtitle
+            : WebContent.home.appDownloadSection.subtitle
+        }
+        image={WebContent.home.appDownloadSection.image}
+        backgroundColor="var(--primary)"
+      />
     </div>
   );
 };
